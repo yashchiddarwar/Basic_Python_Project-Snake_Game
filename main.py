@@ -33,13 +33,15 @@ while game_on:
         snake.add_head()
 
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_on = False
-        score.gameover()
+        # game_on = False
+        score.game_reset()
+        snake.snake_reset()
 
     for turtle in range(1, len(snake.turtle_list) - 1):
         if snake.head.distance(snake.turtle_list[turtle]) < 10:
-            score.gameover()
-            game_on = False
+            score.game_reset()
+            snake.snake_reset()
+            # game_on = False
 
 
 

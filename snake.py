@@ -30,6 +30,16 @@ class Snake:
     def add_head(self):
         self.extend(self.turtle_list[-1].position())
 
+    def snake_reset(self):
+        for x in self.turtle_list:
+            x.goto(1000,1000)
+
+        self.turtle_list.clear()
+        self.create_snake()
+        self.head = self.turtle_list[0]
+        time.sleep(2)
+
+
 
 
 
